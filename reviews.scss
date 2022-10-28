@@ -1,0 +1,162 @@
+.reviews {
+    padding: $body-padding;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: .1fr .1fr;
+    grid-column-gap: 50px;
+    cursor: default;
+    padding-bottom: 150px;
+    position: relative;
+
+    &__header {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-size: 30px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+    }
+
+    &__massage-container {
+        background-color: rgba(243, 243, 243, 1);
+        position: relative;
+        padding: 50px 115px 50px 130px;
+        max-height: max-content;
+    }
+
+    &__massage-icon {
+        position: absolute;
+        top: 40px;
+        left: 55px;
+    }
+
+    &__content {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__sender {
+        text-align: center;
+    }
+
+    &__sender-photo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__name {
+        color: $main-color;
+        font-size: 20px;
+        margin: 0;
+    }
+
+    &__position {
+        margin: 0;
+    }
+
+    &__switch {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 40px;
+        background-color: $main-color;
+        border-radius: 50%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        border: none;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            background-color: rgb(133, 115, 255);
+        }
+
+        &_left {
+            position: absolute;
+            right: 50.5%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url("icons/left.png");
+                background-repeat: no-repeat;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px;
+                height: 18px;
+            }
+        }
+
+        &_right {
+            position: absolute;
+            left: 50.5%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-image: url("icons/right.png");
+                background-repeat: no-repeat;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+
+@media (max-width:1350px) {
+    .reviews {
+
+
+        &__massage-container {
+            padding: 20px 50px 20px 80px;
+        }
+
+        &__massage-icon {
+            top: 20px;
+            left: 25px;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .reviews {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0;
+
+        &__sender {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 2;
+            margin-bottom: 30px;
+        }
+
+        &__massage-icon {
+            width: 20px;
+            top: 15px;
+            left: 15px;
+        }
+
+        &__massage-container {
+            padding: 10px 20px 10px 40px;
+        }
+
+        &__content {
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+    }
+}

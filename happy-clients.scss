@@ -1,0 +1,78 @@
+.happy-clients {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgba(243, 243, 243, 1);
+    padding: $body-padding;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    cursor: default;
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    &__image {
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        align-self: center;
+        margin-right: 15px;
+
+        &_medal {
+            margin-right: 37px;
+        }
+
+        &_employee {
+            margin-right: 35px;
+        }
+
+        &_coffee {
+            margin-right: 25px;
+        }
+    }
+
+    &__title {
+        grid-column-start: 2;
+        grid-column-end: 2;
+
+        align-self: end;
+        margin: 0;
+        font-size: 30px;
+        color: $main-color;
+    }
+
+    &__subtitle {
+        grid-column-start: 2;
+        grid-column-end: 2;
+
+        margin: 0;
+        align-self: start;
+        font-size: 18px;
+        font-weight: normal;
+    }
+}
+
+@media (max-width:1350px) {
+    .happy-clients {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 50px;
+
+        &__item {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__image {
+            justify-self: right;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .happy-clients {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+}
